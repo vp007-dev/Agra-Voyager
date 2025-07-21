@@ -2,7 +2,7 @@
 
 Welcome to **Agra Voyager**, a smart desktop tour planner designed to help tourists discover the real Agra, beyond the usual monuments. This application creates personalized, intelligent itineraries based on user interests, travel pace, and dates, ensuring a unique and hassle-free experience.
 
-![Agra Voyager Screenshot](https://i.imgur.com/8a023428-5a20-4117-a0ac-3fad9db1ee5e.jpg)
+![Agra Voyager Screenshot](https://github.com/vp007-dev/Agra-Voyager/blob/main/Capture.PNG)
 
 ## ✨ Features
 
