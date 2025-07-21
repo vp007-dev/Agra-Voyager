@@ -32,7 +32,7 @@ To get the Agra Voyager application running on your local machine, follow these 
 **Setup:**
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/vp007-dev/Agra-Voyager.git
     ```
 2.  **Open the project** in your favorite IDE.
 3.  **Set up the database:**
