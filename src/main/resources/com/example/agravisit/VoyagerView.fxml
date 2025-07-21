@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- The fx:controller attribute should match your package name -->
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" stylesheets="@styles.css" xmlns="[http://javafx.com/javafx/21](http://javafx.com/javafx/21)" xmlns:fx="[http://javafx.com/fxml/1](http://javafx.com/fxml/1)" fx:controller="com.example.agravisit.VoyagerViewController">
+
+    <!-- =============================================================== -->
+    <!-- LEFT PANEL: The main controls for the planner                   -->
+    <!-- =============================================================== -->
+    <left>
+        <VBox prefHeight="600.0" prefWidth="350.0" styleClass="left-panel" BorderPane.alignment="CENTER">
+            <children>
+                <!-- App Title -->
+                <Label styleClass="app-title" text="Agra Voyager">
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </Label>
+                <Label styleClass="app-subtitle" text="Your Personal Tour Planner">
+                    <VBox.margin>
+                        <Insets bottom="40.0" />
+                    </VBox.margin>
+                </Label>
+
+                <!-- Date Selection -->
+                <Label styleClass="section-header" text="Select Your Dates" />
+                <DatePicker fx:id="startDatePicker" prefHeight="40.0" promptText="Start Date" />
+                <DatePicker fx:id="endDatePicker" prefHeight="40.0" promptText="End Date">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </DatePicker>
+
+                <!-- Pace Selection -->
+                <Label styleClass="section-header" text="Choose Your Pace">
+                    <VBox.margin>
+                        <Insets top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <VBox styleClass="radio-container">
+                    <children>
+                        <RadioButton mnemonicParsing="false" selected="true" text="Relaxed (2-3 sites per day)">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="paceGroup" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Moderate (3-4 sites per day)" toggleGroup="$paceGroup" />
+                        <RadioButton mnemonicParsing="false" text="Packed (5+ sites per day)" toggleGroup="$paceGroup" />
+                    </children>
+                </VBox>
+
+                <!-- Spacer to push button to the bottom -->
+                <VBox VBox.vgrow="ALWAYS" />
+
+                <!-- Generate Button: onAction links this to the controller method -->
+                <Button fx:id="generateButton" mnemonicParsing="false" onAction="#handleGenerateButtonAction" prefHeight="55.0" prefWidth="350.0" styleClass="generate-button" text="Generate My Itinerary">
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+            <padding>
+                <Insets left="25.0" right="25.0" />
+            </padding>
+        </VBox>
+    </left>
+
+    <!-- =============================================================== -->
+    <!-- RIGHT PANEL: The visual inspiration and interest selection      -->
+    <!-- =============================================================== -->
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="right-panel" BorderPane.alignment="CENTER">
+            <children>
+                <VBox layoutX="52.0" layoutY="44.0" prefHeight="563.0" prefWidth="547.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="44.0">
+                    <children>
+                        <!-- Welcome Header -->
+                        <Label styleClass="welcome-header" text="Plan Your Perfect Getaway" />
+                        <Label styleClass="welcome-subheader" text="Select your interests and we'll craft the perfect journey for you." />
+
+                        <!-- Interest Cards Grid: fx:id's have been added -->
+                        <GridPane hgap="20.0" vgap="20.0">
+                            <VBox.margin>
+                                <Insets top="40.0" />
+                            </VBox.margin>
+                            <children>
+                                <!-- Card 1: History -->
+                                <ToggleButton fx:id="historyToggle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="120.0" prefWidth="260.0" styleClass="interest-card" text="History &amp; Monuments" />
+                                <!-- Card 2: Shopping -->
+                                <ToggleButton fx:id="shoppingToggle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="120.0" prefWidth="260.0" styleClass="interest-card" text="Shopping &amp; Bazaars" GridPane.columnIndex="1" />
+                                <!-- Card 3: Food -->
+                                <ToggleButton fx:id="foodToggle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="120.0" prefWidth="260.0" styleClass="interest-card" text="Food &amp; Cuisine" GridPane.rowIndex="1" />
+                                <!-- Card 4: Gardens -->
+                                <ToggleButton fx:id="gardensToggle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="120.0" prefWidth="260.0" styleClass="interest-card" text="Gardens &amp; Nature" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <!-- Card 5: Art -->
+                                <ToggleButton fx:id="artToggle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="120.0" prefWidth="260.0" styleClass="interest-card" text="Art &amp; Culture" GridPane.rowIndex="2" />
+                                <!-- Card 6: Photography -->
+                                <ToggleButton fx:id="photographyToggle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="120.0" prefWidth="260.0" styleClass="interest-card" text="Photography Spots" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
